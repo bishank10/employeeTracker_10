@@ -19,7 +19,7 @@ let questions = [
   {
     type: "list",
     message: "Select from one of the following option?",
-    name: "selected ",
+    name: "selected",
     choices: ["add department", "add employee", "add role", "view all employee", "update employee role"]
   }
 ];
@@ -28,6 +28,7 @@ let questions = [
 function startApp() {
   inquirer.prompt(questions)
     .then(res => {
+      console.log(res.selected);
       switch (res.selected) {
         case "add department":
           addDepartment();
@@ -109,7 +110,7 @@ function addEmployee() {
     {
       type: "number",
       message: "Input the manager id for ",
-      name: "ManagerId"
+      name: "managerId"
     }
   ]).then(res => {
     console.log("inserting new employee")
@@ -182,7 +183,7 @@ function viewAllEmployee(){
   connection.query("SELECT * FROM employee LEFT JOIN role ON employee.id = role.id LEFT JOIN department ON role.id = department.id"), 
   function(err, res){
     if(err) throw err;
-    console.table(res);
+    console.log(res);
   }
 }
 

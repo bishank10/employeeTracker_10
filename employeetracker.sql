@@ -30,3 +30,13 @@ INSERT INTO department(id,name)
 VALUES
     (1, "front office"),
     (2, "accounting");
+
+INSERT INTO role(id, title, salary, department_id)
+VALUES
+    (1, "bookkeeper", 3000, "2"),
+    (2, "teller", 2000, "1");
+
+INSERT INTO employee (id, first_name, last_name, role_id, manager_id)
+VALUES
+    (1, "shawn", "Swanson", 2, 1),
+    (2, "victor", "gallegos", 1, 1);

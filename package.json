@@ -1,5 +1,5 @@
 {
-  "name": "employeetracker_10",
+  "name": "employeeTracker_10",
   "version": "1.0.0",
   "description": "",
   "main": "employeeTracker.js",
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/bishank10/employeeTracker_10.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
