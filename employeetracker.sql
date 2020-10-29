@@ -4,24 +4,29 @@ USE employee_tracker;
 
 
 CREATE TABLE department (
-    id INT AUTO_INCREMENT NOT NULL ,
+    id INT NOT NULL ,
     name VARCHAR(30),
     PRIMARY KEY(id)
 );
 
 CREATE TABLE role (
-    id INT AUTO_INCREMENT NOT NULL  ,
+    id INT NOT NULL  ,
     title VARCHAR(30),
-    slary Decimal(10,2),
+    salary Decimal(10,2),
     department_id INT NOT NULL,
     PRIMARY KEY(id)
 );
 
 CREATE TABLE employee (
-    id INT AUTO_INCREMENT NOT NULL,
+    id INT NOT NULL,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
     role_id INT NOT NULL,
     manager_id INT NOT NULL,
     PRIMARY KEY(id)
 );
+
+INSERT INTO department(id,name)
+VALUES
+    (1, "front office"),
+    (2, "accounting");
