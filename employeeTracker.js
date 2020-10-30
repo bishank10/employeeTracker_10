@@ -72,9 +72,9 @@ function addDepartment() {
   ]).then(res => {
     console.log("inserting new department")
     connection.query("INSERT INTO department SET ?", { id : res.id, department: res.departmentName },
-      function (err, res) {
+      function (err, result) {
         if (err) throw err;
-        console.log(res.affectedRows + " product inserted!\n");
+        console.log(result.affectedRows + " product inserted!\n");
         startApp();
 
       }
@@ -89,12 +89,12 @@ function addEmployee() {
   inquirer.prompt([
     {
       type: "input",
-      message: "Input an id the employee",
+      message: "Input an id the employee?",
       name: "id"
     },
     {
       type: "input",
-      message: "Input the first name of the employee",
+      message: "Input the first name of the employee?",
       name: "firstName"
     },
     {
@@ -123,9 +123,9 @@ function addEmployee() {
         manager_id: res.managerId
 
       },
-      function (err, res) {
+      function (err, result) {
         if (err) throw err;
-        console.log(res.affectedRows + " product inserted!\n")
+        console.log(result.affectedRows + " product inserted!\n")
         startApp();
 
       }
@@ -168,24 +168,27 @@ function addRole() {
         department_id: res.departmentId
 
       },
-      function (err, res) {
+      function (err, result) {
         if (err) throw err;
-        console.log(res.affectedRows + " product inserted!\n")
+        console.log(result.affectedRows + " product inserted!\n")
         startApp();
 
       }
     )
   })
 
-};
+}; 
 
 function viewAllEmployee(){
-  connection.query("SELECT * FROM employee LEFT JOIN role ON employee.id = role.id LEFT JOIN department ON role.id = department.id"), 
-  function(err, res){
+  connection.query("SELECT * FROM employee LEFT JOIN role ON employee.role_id=role.id LEFT JOIN department ON role.department_id=department.id", 
+  function(err, result){
     if(err) throw err;
-    console.log(res);
+    console.table(result);
+
+    console.log("here it is ");
+  startApp();
   }
-}
+  )};
 
 function updateEmployeeRole() {
   
@@ -218,20 +221,20 @@ function updateEmployeeRole() {
     
   ]).then(res => {
    
-    connection.query("UPDATE role SET ? WHERE ", 
+    connection.query("UPDATE role SET ? WHERE ?", 
     [{
       id : res.newId,
       title : res.newTitle,
       salary : res.newSalary,
-      department_id : newDepartmentId
+      department_id : res.newDepartmentId
     },
     {
       id : res.id
     }
   ],
-      function (err, res) {
+      function (err, result) {
         if (err) throw err;
-        console.log(res.affectedRows + " product inserted!\n");
+        console.log(result.affectedRows + " product inserted!\n");
         startApp();
 
       }
