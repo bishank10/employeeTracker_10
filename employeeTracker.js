@@ -61,20 +61,16 @@ function addDepartment() {
   inquirer.prompt([
     {
       type: "input",
-      message: "Input sn id for department",
-      name: "id"
-    },
-    {
-      type: "input",
       message: "Input the name of department you would like to add?",
       name: "departmentName"
     }
   ]).then(res => {
     console.log("inserting new department")
-    connection.query("INSERT INTO department SET ?", { id : res.id, department: res.departmentName },
+    connection.query("INSERT INTO department SET ?", {name : res.departmentName },
       function (err, result) {
         if (err) throw err;
         console.log(result.affectedRows + " product inserted!\n");
+        console.log("department added");
         startApp();
 
       }
@@ -144,7 +140,7 @@ function addRole() {
     },
     {
       type: "input",
-      message: "Input the title of the employee",
+      message: "Input the title of the employee?",
       name: "title"
     },
     {
@@ -205,7 +201,7 @@ function updateEmployeeRole() {
     },
     {
       type: "input",
-      message: "Input the new title of the employee",
+      message: "Input the new title of the employee?",
       name: "newTitle"
     },
     {
