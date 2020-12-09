@@ -9,6 +9,9 @@ You can install all the necessary dependencies with the command " npm install"
 ## Github repo URL :
 https://github.com/bishank10/employeeTracker_10.git
 
+## image
+![GitHub Logo](./Assets/schema.png)
+
 ## TO future CONTRIBUTE:
 Simply do a git pull, once you make desired changes do a pull request and we will merge the request as to make the app functionality even better
 
@@ -16,6 +19,6 @@ Simply do a git pull, once you make desired changes do a pull request and we wil
 Developer : Bishank Bohara
 you can reach out to me via, email ON chandbishank@gmail.com
 
-##gif
+## gif
 ![GitHub Logo](./Assets/employee-tracker.gif)
 Format: ![Alt Text](url)

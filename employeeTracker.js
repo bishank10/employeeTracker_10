@@ -160,7 +160,7 @@ function addRole() {
       {
         id : res.id,
         title: res.title,
-        salary: res.lastName,
+        salary: res.salary,
         department_id: res.departmentId
 
       },
