@@ -12,7 +12,10 @@ https://github.com/bishank10/employeeTracker_10.git
 ## image
 ![GitHub Logo](./Assets/schema.png)
 
-## TO future CONTRIBUTE:
+## command to run the app
+You can run the command "node employeeTracker.js" to start the app
+
+## TO future CONTRIBUTERS:
 Simply do a git pull, once you make desired changes do a pull request and we will merge the request as to make the app functionality even better
 
 ## Contact info:
